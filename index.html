@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Singhawon — World Dance Studio Since 2006</title>
+<meta name="description" content="Premium instruction in Salsa, Bachata, Argentine Tango, Ballet and Pole Dance. A sanctuary for movement since 2006." />
+<meta property="og:title" content="Singhawon — World Dance Studio" />
+<meta property="og:description" content="Premium instruction in Salsa, Bachata, Argentine Tango, Ballet and Pole Dance." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#faf9f6; --fg:#1c1917; --ink:#0c0a09; --accent:#78350f;
+    --muted:#f5f3ee; --mute-fg:#57534e; --border:rgba(28,25,23,.08);
+    --serif:"Cormorant Garamond",serif; --sans:"Inter",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.5}
+  h1,h2,h3,h4{font-family:var(--serif);letter-spacing:-.01em;line-height:1.05;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%;height:auto}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:500;display:block;margin-bottom:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:all .25s ease;background:none;font-family:var(--sans)}
+  .btn-primary{background:var(--fg);color:var(--bg)}
+  .btn-primary:hover{background:var(--ink)}
+  .btn-ghost{border-color:rgba(28,25,23,.2);color:var(--fg)}
+  .btn-ghost:hover{border-color:var(--fg)}
+  .dot{width:6px;height:6px;border-radius:99px;background:var(--accent)}
+
+  /* Nav */
+  nav.bar{position:sticky;top:0;z-index:50;background:rgba(250,249,246,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  nav.bar .row{display:flex;align-items:center;justify-content:space-between;height:64px}
+  nav.bar .brand{font-family:var(--serif);font-size:24px}
+  nav.bar .links{display:none;gap:32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+  nav.bar .links a:hover{color:var(--accent)}
+  nav.bar .book{background:var(--fg);color:var(--bg);padding:9px 16px 9px 12px;border-radius:3px;font-size:13px;display:flex;align-items:center;gap:8px}
+  @media(min-width:768px){nav.bar .links{display:flex}}
+
+  /* Hero */
+  .hero{padding:48px 24px 96px;position:relative;overflow:hidden}
+  .hero .grid{display:grid;gap:40px;align-items:end}
+  .hero h1{font-size:clamp(56px,10vw,128px);text-wrap:balance}
+  .hero h1 .it{font-style:italic;display:block;padding-left:clamp(40px,8vw,96px)}
+  .hero p.lede{max-width:42ch;font-size:18px;color:var(--mute-fg);margin:32px 0 40px}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .visual{position:relative}
+  .hero .visual img{aspect-ratio:3/4;object-fit:cover;border-radius:8px;box-shadow:0 30px 80px -30px rgba(28,25,23,.35);width:100%}
+  .badge{position:absolute;left:-20px;bottom:-20px;background:var(--bg);border:1px solid var(--border);padding:14px 18px;border-radius:6px;display:none}
+  .badge .n{font-family:var(--serif);font-style:italic;font-size:26px}
+  .badge .l{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg);margin-top:4px}
+  @media(min-width:1024px){.hero .grid{grid-template-columns:1.2fr .8fr;gap:64px} .badge{display:block}}
+
+  /* Styles section */
+  .styles{background:var(--ink);color:var(--bg);padding:96px 0;overflow:hidden}
+  .styles .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+  .styles h2{font-size:clamp(36px,5vw,56px);text-wrap:balance;max-width:14ch}
+  .styles .head p{max-width:36ch;font-size:14px;color:rgba(250,249,246,.6)}
+  .styles .rule{height:1px;background:rgba(255,255,255,.1);margin-top:48px}
+  .scroller{display:flex;gap:24px;overflow-x:auto;padding:48px 24px;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .scroller::-webkit-scrollbar{display:none}
+  .card{flex:0 0 290px;scroll-snap-align:start}
+  .card .img{aspect-ratio:4/5;overflow:hidden;border-radius:8px;margin-bottom:24px;background:#27272a}
+  .card .img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+  .card:hover .img img{transform:scale(1.05)}
+  .card .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+  .card h3{font-size:24px}
+  .card .tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c2825a}
+  .card p{font-size:14px;color:rgba(250,249,246,.6);max-width:35ch}
+  @media(min-width:640px){.card{flex-basis:320px}}
+
+  /* Royalty */
+  .royalty{padding:96px 24px}
+  .royalty .panel{max-width:880px;margin:0 auto;border:1px solid var(--border);padding:48px 32px;border-radius:24px;background:rgba(245,243,238,.6);text-align:center}
+  .royalty h2{font-size:clamp(36px,5vw,56px);margin-bottom:24px;text-wrap:balance}
+  .royalty p.lede{color:var(--mute-fg);max-width:48ch;margin:0 auto 48px;text-wrap:pretty}
+  .tiers{display:grid;grid-template-columns:1fr;gap:0}
+  .tier{padding:24px}
+  .tier .n{font-family:var(--serif);font-size:32px;margin-bottom:4px}
+  .tier .l{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg);margin-bottom:8px}
+  .tier .x{font-size:12px;color:var(--accent)}
+  @media(min-width:640px){.tiers{grid-template-columns:repeat(3,1fr)}.tier+.tier{border-left:1px solid var(--border)}.royalty .panel{padding:64px}}
+
+  /* Schedule */
+  .sched{padding:96px 24px}
+  .sched .head{display:flex;flex-direction:column;gap:16px;justify-content:space-between;align-items:flex-start;margin-bottom:48px}
+  .sched h2{font-size:clamp(36px,5vw,56px)}
+  .sched .full{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--fg);padding-bottom:4px}
+  .rows{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:24px 8px;border-bottom:1px solid var(--border);transition:background .25s}
+  .row:last-child{border-bottom:0}
+  .row:hover{background:rgba(245,243,238,.5)}
+  .row .t{font-size:14px;font-weight:500;font-variant-numeric:tabular-nums;color:var(--accent)}
+  .row .ti{font-family:var(--serif);font-size:22px;grid-column:1/-1;margin-top:-4px}
+  .row .meta{display:none;font-size:14px;color:var(--mute-fg)}
+  @media(min-width:640px){
+    .row{grid-template-columns:120px 1fr 220px}
+    .row .t{color:var(--fg)}
+    .row .ti{grid-column:auto;margin:0;font-size:24px}
+    .row .meta{display:block;text-align:right}
+    .sched .head{flex-direction:row;align-items:flex-end}
+  }
+
+  /* Events */
+  .events{padding:96px 24px;background:rgba(245,243,238,.5);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .events h2{font-size:clamp(36px,5vw,56px);margin-bottom:48px}
+  .ev-grid{display:grid;grid-template-columns:1fr;gap:40px}
+  .ev{border-top:1px solid var(--fg);padding-top:24px;cursor:pointer;transition:transform .35s}
+  .ev:hover{transform:translateY(-4px)}
+  .ev .d{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .ev h3{font-size:24px;margin:12px 0}
+  .ev p{font-size:14px;color:var(--mute-fg)}
+  @media(min-width:768px){.ev-grid{grid-template-columns:repeat(3,1fr)}}
+
+  /* Testimonial */
+  .quote{padding:96px 24px}
+  .quote .inner{max-width:760px;margin:0 auto;text-align:center}
+  .quote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.2vw,36px);line-height:1.3;margin-bottom:32px;text-wrap:pretty}
+  .quote cite{font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg)}
+
+  /* Contact */
+  .contact{padding:96px 24px;background:var(--muted);border-top:1px solid var(--border)}
+  .c-grid{display:grid;grid-template-columns:1fr;gap:48px;max-width:1200px;margin:0 auto;align-items:start}
+  .c-grid h2{font-size:clamp(36px,5vw,56px);margin-bottom:16px}
+  .c-grid p{color:var(--mute-fg);max-width:42ch;margin-bottom:32px}
+  .c-grid .info{display:grid;gap:24px}
+  .c-grid .info div{border-top:1px solid var(--border);padding-top:16px}
+  .c-grid .info .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg);margin-bottom:6px}
+  .c-grid .info .v{font-family:var(--serif);font-size:22px}
+  form{display:grid;gap:16px}
+  form .field{display:grid;gap:6px}
+  form label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg)}
+  form input,form select,form textarea{font-family:inherit;font-size:15px;padding:14px 16px;border:1px solid var(--border);background:var(--bg);border-radius:4px;color:var(--fg)}
+  form input:focus,form select:focus,form textarea:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+  form textarea{min-height:120px;resize:vertical}
+  @media(min-width:900px){.c-grid{grid-template-columns:1fr 1fr;gap:80px}}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(250,249,246,.7);padding:64px 24px 32px}
+  footer .grid{display:grid;grid-template-columns:1fr;gap:48px;max-width:1200px;margin:0 auto 64px}
+  footer .brand{font-family:var(--serif);font-size:24px;color:var(--bg);display:block;margin-bottom:24px}
+  footer p,footer address{font-size:14px;line-height:1.6;font-style:normal;max-width:32ch}
+  footer h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);margin-bottom:24px;font-family:var(--sans);font-weight:600}
+  footer ul{list-style:none;display:grid;gap:12px}
+  footer a:hover{color:var(--bg)}
+  .legal{max-width:1200px;margin:0 auto;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+  .legal a{margin-left:32px}
+  @media(min-width:768px){footer .grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav class="bar">
+  <div class="container row">
+    <a href="#" class="brand">Singhawon</a>
+    <div class="links">
+      <a href="#styles">Styles</a>
+      <a href="#royalty">Royalty</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="book"><span class="dot"></span> Book Session</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow" style="font-family:var(--serif);font-style:italic;color:var(--accent);font-size:18px;letter-spacing:0;text-transform:none;margin-bottom:24px;font-weight:500">World Dance Studio · Since 2006</span>
+    <div class="grid">
+      <div>
+        <h1>Momentum <span class="it">&amp; Poise</span></h1>
+        <p class="lede">A world-class sanctuary for movement since 2006. We translate the kinetic energy of global dance into professional instruction for the modern artist — Salsa, Bachata, Argentine Tango, Ballet and Pole Dance.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#schedule">View Schedule</a>
+          <a class="btn btn-ghost" href="#styles">Explore Disciplines</a>
+        </div>
+      </div>
+      <div class="visual">
+        <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=1080&auto=format&fit=crop&q=80" alt="Dancer mid-turn in flowing fabric" width="1080" height="1440" />
+        <div class="badge"><div class="n">19 yrs</div><div class="l">Of teaching craft</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="styles" class="styles">
+  <div class="container">
+    <div class="head">
+      <div>
+        <span class="eyebrow" style="color:#c2825a">Curated Disciplines</span>
+        <h2>Five worlds, one studio</h2>
+      </div>
+      <p>From Latin floor heat to classical lines — taught by working professionals with international stages on their résumés.</p>
+    </div>
+    <div class="rule"></div>
+  </div>
+  <div class="scroller">
+    <article class="card">
+      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&auto=format&fit=crop&q=80" alt="Salsa" /></div>
+      <div class="row"><h3>Salsa</h3><span class="tag">On1 · On2</span></div>
+      <p>Sophisticated mambo styling with a focus on connection, timing and musicality.</p>
+    </article>
+    <article class="card">
+      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=800&auto=format&fit=crop&q=80" alt="Bachata" /></div>
+      <div class="row"><h3>Sensual Bachata</h3><span class="tag">Modern</span></div>
+      <p>Fluid body movement, body waves and contemporary technical patterns.</p>
+    </article>
+    <article class="card">
+      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=800&auto=format&fit=crop&q=80" alt="Argentine Tango" /></div>
+      <div class="row"><h3>Argentine Tango</h3><span class="tag">Salon · Milonga</span></div>
+      <p>The authentic art of improvisation, embrace and silent communication.</p>
+    </article>
+    <article class="card">
+      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=800&auto=format&fit=crop&q=80" alt="Ballet" /></div>
+      <div class="row"><h3>Classical Ballet</h3><span class="tag">Open Level</span></div>
+      <p>The foundation of grace, strength and technical discipline at the barre.</p>
+    </article>
+    <article class="card">
+      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&auto=format&fit=crop&q=80" alt="Pole Art" /></div>
+      <div class="row"><h3>Pole Art</h3><span class="tag">Aerial</span></div>
+      <p>Contemporary aerial dance combining strength, flexibility and fluidity.</p>
+    </article>
+  </div>
+</section>
+
+<section id="royalty" class="royalty">
+  <div class="panel">
+    <span class="eyebrow">Tiered Membership</span>
+    <h2>Dance Royalty</h2>
+    <p class="lede">Our loyalty program for the dedicated student. Earn status with every class, unlock masterclasses, and receive private invitations to studio galas.</p>
+    <div class="tiers">
+      <div class="tier"><div class="n">Silver</div><div class="l">Level I</div><div class="x">10+ classes</div></div>
+      <div class="tier"><div class="n">Gold</div><div class="l">Level II</div><div class="x">50+ classes</div></div>
+      <div class="tier"><div class="n">Platinum</div><div class="l">Elite</div><div class="x">By invitation</div></div>
+    </div>
+    <a class="btn btn-primary" href="#contact" style="margin-top:48px">Join the Program</a>
+  </div>
+</section>
+
+<section id="schedule" class="sched">
+  <div class="container">
+    <div class="head">
+      <div>
+        <span class="eyebrow">This Week</span>
+        <h2>Weekly Schedule</h2>
+      </div>
+      <a class="full" href="#">View Full Calendar</a>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="t">18:30</span><span class="ti">Bachata Sensual · Intro</span><span class="meta">Studio A · Elena R.</span></div>
+      <div class="row"><span class="t">19:45</span><span class="ti">Argentine Tango · Milonga</span><span class="meta">Grand Hall · Marco S.</span></div>
+      <div class="row"><span class="t">21:00</span><span class="ti">Salsa Social &amp; Practice</span><span class="meta">Lounge · Open Floor</span></div>
+      <div class="row"><span class="t">10:30</span><span class="ti">Classical Ballet · Open</span><span class="meta">Studio B · Iliana P.</span></div>
+      <div class="row"><span class="t">12:00</span><span class="ti">Pole Art · Intermediate</span><span class="meta">Studio C · Naomi K.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="events">
+  <div class="container">
+    <span class="eyebrow">Upcoming</span>
+    <h2>Events &amp; Workshops</h2>
+    <div class="ev-grid">
+      <article class="ev"><span class="d">12 May</span><h3>Mid-Spring Masquerade</h3><p>A curated evening of performance and social dance in our Grand Hall.</p></article>
+      <article class="ev"><span class="d">24 Jun</span><h3>International Guest Intensive</h3><p>Three days of mastery with world-renowned soloist Elena Petrov.</p></article>
+      <article class="ev"><span class="d">08 Jul</span><h3>Royalty Member Gala</h3><p>Private gala for Dance Royalty members — by invitation only.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="inner">
+    <blockquote>“Singhawon isn't a dance school — it's where I discovered the discipline behind grace. Nineteen years on, the studio still feels like the first night.”</blockquote>
+    <cite>Julianne Vance · Member since 2018</cite>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="c-grid">
+    <div>
+      <span class="eyebrow">Visit Us</span>
+      <h2>Begin your practice</h2>
+      <p>Walk in for a tour or send a note. We'll match you with a class for your level and pace within 24 hours.</p>
+      <div class="info">
+        <div><div class="k">Studio</div><div class="v">124 Movement Way<br/>Design District, 10110</div></div>
+        <div><div class="k">Email</div><div class="v">hello@singhawon.com</div></div>
+        <div><div class="k">Hours</div><div class="v">Mon–Fri 09:00 – 22:00<br/>Sat–Sun 10:00 – 18:00</div></div>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();alert('Thank you — we will be in touch shortly.');this.reset();">
+      <div class="field"><label for="n">Name</label><input id="n" required placeholder="Your full name" /></div>
+      <div class="field"><label for="e">Email</label><input id="e" type="email" required placeholder="you@email.com" /></div>
+      <div class="field"><label for="s">Interested style</label>
+        <select id="s"><option>Salsa</option><option>Sensual Bachata</option><option>Argentine Tango</option><option>Classical Ballet</option><option>Pole Art</option><option>Not sure yet</option></select>
+      </div>
+      <div class="field"><label for="m">Message</label><textarea id="m" placeholder="Tell us about your experience level…"></textarea></div>
+      <button class="btn btn-primary" type="submit">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="grid">
+    <div>
+      <span class="brand">Singhawon</span>
+      <p>Defining the pulse of world dance since 2006. Professional instruction in an editorial environment.</p>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="#styles">Disciplines</a></li>
+        <li><a href="#royalty">Dance Royalty</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#events">Events</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <address>124 Movement Way<br/>Design District, 10110<br/>hello@singhawon.com</address>
+    </div>
+    <div>
+      <h4>Social</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="legal">
+    <span>© <script>document.write(new Date().getFullYear())</script> Singhawon Dance Studio</span>
+    <span><a href="#">Privacy</a><a href="#">Terms</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
