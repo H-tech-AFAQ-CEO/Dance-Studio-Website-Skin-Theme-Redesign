@@ -1,344 +1,1689 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Singhawon — World Dance Studio Since 2006</title>
-<meta name="description" content="Premium instruction in Salsa, Bachata, Argentine Tango, Ballet and Pole Dance. A sanctuary for movement since 2006." />
-<meta property="og:title" content="Singhawon — World Dance Studio" />
-<meta property="og:description" content="Premium instruction in Salsa, Bachata, Argentine Tango, Ballet and Pole Dance." />
-<meta property="og:type" content="website" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumpuree — World Dance Studio Since 2006</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#faf9f6; --fg:#1c1917; --ink:#0c0a09; --accent:#78350f;
-    --muted:#f5f3ee; --mute-fg:#57534e; --border:rgba(28,25,23,.08);
-    --serif:"Cormorant Garamond",serif; --sans:"Inter",sans-serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;line-height:1.5}
-  h1,h2,h3,h4{font-family:var(--serif);letter-spacing:-.01em;line-height:1.05;font-weight:600}
-  a{color:inherit;text-decoration:none}
-  img{display:block;max-width:100%;height:auto}
-  .container{max-width:1200px;margin:0 auto;padding:0 24px}
-  .eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:500;display:block;margin-bottom:12px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:all .25s ease;background:none;font-family:var(--sans)}
-  .btn-primary{background:var(--fg);color:var(--bg)}
-  .btn-primary:hover{background:var(--ink)}
-  .btn-ghost{border-color:rgba(28,25,23,.2);color:var(--fg)}
-  .btn-ghost:hover{border-color:var(--fg)}
-  .dot{width:6px;height:6px;border-radius:99px;background:var(--accent)}
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* Nav */
-  nav.bar{position:sticky;top:0;z-index:50;background:rgba(250,249,246,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-  nav.bar .row{display:flex;align-items:center;justify-content:space-between;height:64px}
-  nav.bar .brand{font-family:var(--serif);font-size:24px}
-  nav.bar .links{display:none;gap:32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
-  nav.bar .links a:hover{color:var(--accent)}
-  nav.bar .book{background:var(--fg);color:var(--bg);padding:9px 16px 9px 12px;border-radius:3px;font-size:13px;display:flex;align-items:center;gap:8px}
-  @media(min-width:768px){nav.bar .links{display:flex}}
-
-  /* Hero */
-  .hero{padding:48px 24px 96px;position:relative;overflow:hidden}
-  .hero .grid{display:grid;gap:40px;align-items:end}
-  .hero h1{font-size:clamp(56px,10vw,128px);text-wrap:balance}
-  .hero h1 .it{font-style:italic;display:block;padding-left:clamp(40px,8vw,96px)}
-  .hero p.lede{max-width:42ch;font-size:18px;color:var(--mute-fg);margin:32px 0 40px}
-  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
-  .hero .visual{position:relative}
-  .hero .visual img{aspect-ratio:3/4;object-fit:cover;border-radius:8px;box-shadow:0 30px 80px -30px rgba(28,25,23,.35);width:100%}
-  .badge{position:absolute;left:-20px;bottom:-20px;background:var(--bg);border:1px solid var(--border);padding:14px 18px;border-radius:6px;display:none}
-  .badge .n{font-family:var(--serif);font-style:italic;font-size:26px}
-  .badge .l{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg);margin-top:4px}
-  @media(min-width:1024px){.hero .grid{grid-template-columns:1.2fr .8fr;gap:64px} .badge{display:block}}
-
-  /* Styles section */
-  .styles{background:var(--ink);color:var(--bg);padding:96px 0;overflow:hidden}
-  .styles .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
-  .styles h2{font-size:clamp(36px,5vw,56px);text-wrap:balance;max-width:14ch}
-  .styles .head p{max-width:36ch;font-size:14px;color:rgba(250,249,246,.6)}
-  .styles .rule{height:1px;background:rgba(255,255,255,.1);margin-top:48px}
-  .scroller{display:flex;gap:24px;overflow-x:auto;padding:48px 24px;scroll-snap-type:x mandatory;scrollbar-width:none}
-  .scroller::-webkit-scrollbar{display:none}
-  .card{flex:0 0 290px;scroll-snap-align:start}
-  .card .img{aspect-ratio:4/5;overflow:hidden;border-radius:8px;margin-bottom:24px;background:#27272a}
-  .card .img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
-  .card:hover .img img{transform:scale(1.05)}
-  .card .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
-  .card h3{font-size:24px}
-  .card .tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#c2825a}
-  .card p{font-size:14px;color:rgba(250,249,246,.6);max-width:35ch}
-  @media(min-width:640px){.card{flex-basis:320px}}
-
-  /* Royalty */
-  .royalty{padding:96px 24px}
-  .royalty .panel{max-width:880px;margin:0 auto;border:1px solid var(--border);padding:48px 32px;border-radius:24px;background:rgba(245,243,238,.6);text-align:center}
-  .royalty h2{font-size:clamp(36px,5vw,56px);margin-bottom:24px;text-wrap:balance}
-  .royalty p.lede{color:var(--mute-fg);max-width:48ch;margin:0 auto 48px;text-wrap:pretty}
-  .tiers{display:grid;grid-template-columns:1fr;gap:0}
-  .tier{padding:24px}
-  .tier .n{font-family:var(--serif);font-size:32px;margin-bottom:4px}
-  .tier .l{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg);margin-bottom:8px}
-  .tier .x{font-size:12px;color:var(--accent)}
-  @media(min-width:640px){.tiers{grid-template-columns:repeat(3,1fr)}.tier+.tier{border-left:1px solid var(--border)}.royalty .panel{padding:64px}}
-
-  /* Schedule */
-  .sched{padding:96px 24px}
-  .sched .head{display:flex;flex-direction:column;gap:16px;justify-content:space-between;align-items:flex-start;margin-bottom:48px}
-  .sched h2{font-size:clamp(36px,5vw,56px)}
-  .sched .full{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--fg);padding-bottom:4px}
-  .rows{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:24px 8px;border-bottom:1px solid var(--border);transition:background .25s}
-  .row:last-child{border-bottom:0}
-  .row:hover{background:rgba(245,243,238,.5)}
-  .row .t{font-size:14px;font-weight:500;font-variant-numeric:tabular-nums;color:var(--accent)}
-  .row .ti{font-family:var(--serif);font-size:22px;grid-column:1/-1;margin-top:-4px}
-  .row .meta{display:none;font-size:14px;color:var(--mute-fg)}
-  @media(min-width:640px){
-    .row{grid-template-columns:120px 1fr 220px}
-    .row .t{color:var(--fg)}
-    .row .ti{grid-column:auto;margin:0;font-size:24px}
-    .row .meta{display:block;text-align:right}
-    .sched .head{flex-direction:row;align-items:flex-end}
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dark: #8B6914;
+    --ink: #0D0D0D;
+    --ink-soft: #1A1A1A;
+    --ash: #F5F3EF;
+    --stone: #2C2C2C;
+    --mist: #6B6B6B;
+    --white: #FFFFFF;
+    --cream: #FAF8F4;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-sans: 'Inter', sans-serif;
+    --font-hero: 'Bebas Neue', sans-serif;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Events */
-  .events{padding:96px 24px;background:rgba(245,243,238,.5);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .events h2{font-size:clamp(36px,5vw,56px);margin-bottom:48px}
-  .ev-grid{display:grid;grid-template-columns:1fr;gap:40px}
-  .ev{border-top:1px solid var(--fg);padding-top:24px;cursor:pointer;transition:transform .35s}
-  .ev:hover{transform:translateY(-4px)}
-  .ev .d{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-  .ev h3{font-size:24px;margin:12px 0}
-  .ev p{font-size:14px;color:var(--mute-fg)}
-  @media(min-width:768px){.ev-grid{grid-template-columns:repeat(3,1fr)}}
+  html { scroll-behavior: smooth; }
 
-  /* Testimonial */
-  .quote{padding:96px 24px}
-  .quote .inner{max-width:760px;margin:0 auto;text-align:center}
-  .quote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.2vw,36px);line-height:1.3;margin-bottom:32px;text-wrap:pretty}
-  .quote cite{font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg)}
+  body {
+    font-family: var(--font-sans);
+    background: var(--ink);
+    color: var(--white);
+    overflow-x: hidden;
+    cursor: none;
+  }
 
-  /* Contact */
-  .contact{padding:96px 24px;background:var(--muted);border-top:1px solid var(--border)}
-  .c-grid{display:grid;grid-template-columns:1fr;gap:48px;max-width:1200px;margin:0 auto;align-items:start}
-  .c-grid h2{font-size:clamp(36px,5vw,56px);margin-bottom:16px}
-  .c-grid p{color:var(--mute-fg);max-width:42ch;margin-bottom:32px}
-  .c-grid .info{display:grid;gap:24px}
-  .c-grid .info div{border-top:1px solid var(--border);padding-top:16px}
-  .c-grid .info .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg);margin-bottom:6px}
-  .c-grid .info .v{font-family:var(--serif);font-size:22px}
-  form{display:grid;gap:16px}
-  form .field{display:grid;gap:6px}
-  form label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-fg)}
-  form input,form select,form textarea{font-family:inherit;font-size:15px;padding:14px 16px;border:1px solid var(--border);background:var(--bg);border-radius:4px;color:var(--fg)}
-  form input:focus,form select:focus,form textarea:focus{outline:1px solid var(--accent);border-color:var(--accent)}
-  form textarea{min-height:120px;resize:vertical}
-  @media(min-width:900px){.c-grid{grid-template-columns:1fr 1fr;gap:80px}}
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s var(--ease), width 0.3s var(--ease), height 0.3s var(--ease);
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 40px; height: 40px;
+    border: 1px solid rgba(201,168,76,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s var(--ease), width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s;
+  }
+  body:has(a:hover) .cursor-ring,
+  body:has(button:hover) .cursor-ring {
+    width: 60px; height: 60px;
+    border-color: var(--gold);
+  }
 
-  /* Footer */
-  footer{background:var(--ink);color:rgba(250,249,246,.7);padding:64px 24px 32px}
-  footer .grid{display:grid;grid-template-columns:1fr;gap:48px;max-width:1200px;margin:0 auto 64px}
-  footer .brand{font-family:var(--serif);font-size:24px;color:var(--bg);display:block;margin-bottom:24px}
-  footer p,footer address{font-size:14px;line-height:1.6;font-style:normal;max-width:32ch}
-  footer h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);margin-bottom:24px;font-family:var(--sans);font-weight:600}
-  footer ul{list-style:none;display:grid;gap:12px}
-  footer a:hover{color:var(--bg)}
-  .legal{max-width:1200px;margin:0 auto;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
-  .legal a{margin-left:32px}
-  @media(min-width:768px){footer .grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--ink); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.5rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.4s, padding 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(20px);
+    padding: 1rem 4rem;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-logo img {
+    height: 48px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s var(--ease);
+  }
+  .nav-logo img:hover { transform: scale(1.05); }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-family: var(--font-sans);
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s var(--ease);
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    font-family: var(--font-sans);
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink) !important;
+    background: var(--gold);
+    padding: 0.6rem 1.5rem;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+  .nav-cta::after { display: none !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column; gap: 5px;
+    cursor: none; background: none; border: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 1.5px;
+    background: var(--white);
+    transition: transform 0.3s var(--ease), opacity 0.3s;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    height: 100vh; min-height: 700px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('https://singhawon.com/images/cover960.jpg') center/cover no-repeat;
+    transform: scale(1.08);
+    animation: heroZoom 20s ease-in-out infinite alternate;
+  }
+  @keyframes heroZoom {
+    from { transform: scale(1.08); }
+    to { transform: scale(1.0); }
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgba(13,13,13,0.85) 0%,
+      rgba(13,13,13,0.5) 50%,
+      rgba(13,13,13,0.75) 100%
+    );
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.65rem; font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease) 0.3s forwards;
+  }
+  .hero-title {
+    font-family: var(--font-hero);
+    font-size: clamp(5rem, 14vw, 14rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeUp 1s var(--ease) 0.5s forwards;
+  }
+  .hero-title .gold { color: var(--gold); }
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    color: rgba(255,255,255,0.65);
+    margin-top: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease) 0.7s forwards;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; justify-content: center;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease) 0.9s forwards;
+  }
+  .btn-primary {
+    font-family: var(--font-sans);
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    font-family: var(--font-sans);
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    transition: border-color 0.3s, background 0.3s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 1s var(--ease) 1.4s forwards;
+  }
+  .hero-scroll span {
+    font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .scroll-line {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(0.7); }
+  }
+
+  .hero-stats {
+    position: absolute; bottom: 3rem; right: 4rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 1s var(--ease) 1.2s forwards;
+  }
+  .stat-item { text-align: right; }
+  .stat-num {
+    font-family: var(--font-hero);
+    font-size: 2.2rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-top: 2px;
+  }
+
+  /* ── SECTION SHARED ── */
+  section { position: relative; }
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem; font-weight: 500;
+    letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .divider {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 1.5rem 0;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-strip {
+    background: var(--gold);
+    padding: 0.8rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-flex; gap: 3rem;
+    animation: marquee 25s linear infinite;
+  }
+  .marquee-strip:hover .marquee-inner { animation-play-state: paused; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee-item {
+    font-family: var(--font-sans);
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink);
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .marquee-dot {
+    width: 4px; height: 4px;
+    background: var(--ink-soft);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--cream);
+    padding: 8rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  #about .section-title { color: var(--ink); }
+  #about .section-label { color: var(--gold-dark); }
+  .about-body {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: rgba(13,13,13,0.7);
+    line-height: 1.8;
+    margin-top: 1.5rem;
+  }
+  .about-body strong { color: var(--ink); font-weight: 600; }
+  .about-actions { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-dark {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none; color: var(--white); background: var(--ink);
+    padding: 0.9rem 2rem; border-radius: 2px; display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .btn-dark:hover { background: var(--stone); transform: translateY(-2px); }
+  .btn-gold-outline {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none; color: var(--gold-dark); border: 1px solid var(--gold);
+    padding: 0.9rem 2rem; border-radius: 2px; display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .btn-gold-outline:hover { background: rgba(201,168,76,0.1); transform: translateY(-2px); }
+  .about-images {
+    position: relative;
+    height: 550px;
+  }
+  .about-img-main {
+    position: absolute;
+    width: 75%; height: 85%;
+    right: 0; top: 0;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .about-img-accent {
+    position: absolute;
+    width: 50%; height: 45%;
+    left: 0; bottom: 0;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 6px solid var(--cream);
+  }
+  .about-year-badge {
+    position: absolute;
+    bottom: 35%; right: 0%;
+    width: 110px; height: 110px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: var(--ink);
+  }
+  .about-year-badge .year { font-family: var(--font-hero); font-size: 2rem; line-height: 1; }
+  .about-year-badge .since { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+
+  /* ── DANCE STYLES ── */
+  #styles {
+    background: var(--ink);
+    padding: 8rem 4rem;
+  }
+  .styles-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 4rem;
+    gap: 2rem; flex-wrap: wrap;
+  }
+  .styles-count {
+    font-family: var(--font-hero);
+    font-size: 6rem;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+  }
+  .styles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5px;
+    background: rgba(255,255,255,0.05);
+  }
+  .style-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    cursor: none;
+    background: var(--stone);
+  }
+  .style-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease);
+    filter: brightness(0.75) grayscale(0.2);
+  }
+  .style-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.6) grayscale(0);
+  }
+  .style-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(13,13,13,0.9) 0%, transparent 50%);
+    display: flex; align-items: flex-end;
+    padding: 1.25rem;
+  }
+  .style-card:hover .style-card-overlay { background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.3) 100%); }
+  .style-card-name {
+    font-family: var(--font-display);
+    font-size: 1rem; font-weight: 600;
+    color: var(--white);
+    text-transform: capitalize;
+    letter-spacing: 0.02em;
+    transition: transform 0.3s var(--ease);
+  }
+  .style-card:hover .style-card-name { transform: translateY(-4px); }
+  .style-card-icon {
+    position: absolute; top: 1rem; right: 1rem;
+    width: 32px; height: 32px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s, transform 0.4s var(--ease);
+  }
+  .style-card:hover .style-card-icon { opacity: 1; transform: scale(1); }
+  .style-card-icon svg { width: 14px; height: 14px; stroke: var(--ink); fill: none; stroke-width: 2; }
+
+  .styles-show-more {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  /* ── SCHEDULE TEASER ── */
+  #schedule-teaser {
+    background: var(--ink-soft);
+    padding: 7rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .schedule-days {
+    display: flex; flex-direction: column; gap: 0;
+    margin-top: 3rem;
+  }
+  .schedule-day {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    cursor: none;
+    transition: padding 0.3s var(--ease);
+    position: relative; overflow: hidden;
+  }
+  .schedule-day::before {
+    content: '';
+    position: absolute; left: -100%; top: 0; bottom: 0; right: 0;
+    background: rgba(201,168,76,0.05);
+    transition: left 0.4s var(--ease);
+  }
+  .schedule-day:hover::before { left: 0; }
+  .schedule-day:hover { padding-left: 1rem; }
+  .day-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem; font-weight: 300; font-style: italic;
+    color: rgba(255,255,255,0.5);
+    transition: color 0.3s;
+  }
+  .schedule-day:hover .day-name { color: var(--white); }
+  .day-classes {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end;
+  }
+  .day-tag {
+    font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+  .day-arrow {
+    color: rgba(255,255,255,0.2);
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+    margin-left: 1rem;
+  }
+  .schedule-day:hover .day-arrow { color: var(--gold); transform: translateX(4px); }
+
+  .schedule-visual {
+    position: relative;
+  }
+  .schedule-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: brightness(0.8);
+  }
+  .schedule-card-overlay {
+    position: absolute;
+    bottom: -2rem; left: -2rem;
+    background: var(--gold);
+    padding: 2rem;
+    border-radius: 4px;
+    max-width: 260px;
+  }
+  .schedule-card-overlay .sc-num {
+    font-family: var(--font-hero);
+    font-size: 3rem; line-height: 1;
+    color: var(--ink);
+  }
+  .schedule-card-overlay .sc-text {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-soft); opacity: 0.7;
+    margin-top: 0.25rem;
+  }
+
+  /* ── LOYALTY PROGRAM ── */
+  #loyalty {
+    padding: 8rem 4rem;
+    background: var(--cream);
+    text-align: center;
+  }
+  #loyalty .section-title { color: var(--ink); }
+  #loyalty .section-label { color: var(--gold-dark); }
+  #loyalty .divider { margin: 1.5rem auto; }
+  .loyalty-intro {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: rgba(13,13,13,0.65);
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    line-height: 1.8;
+  }
+  .loyalty-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .tier-card {
+    background: var(--ink);
+    border-radius: 4px;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s;
+  }
+  .tier-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  }
+  .tier-card.featured {
+    background: var(--gold);
+    transform: scale(1.05);
+  }
+  .tier-card.featured:hover { transform: scale(1.05) translateY(-8px); }
+  .tier-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+  .tier-card.featured::before { background: var(--ink); }
+  .tier-icon {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.1);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  .tier-card.featured .tier-icon { background: rgba(13,13,13,0.15); }
+  .tier-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .tier-card.featured .tier-icon svg { stroke: var(--ink); }
+  .tier-name {
+    font-family: var(--font-hero);
+    font-size: 1.8rem; letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .tier-card.featured .tier-name { color: var(--ink); }
+  .tier-perks {
+    list-style: none;
+    margin-top: 1.5rem;
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+  .tier-perks li {
+    font-size: 0.8rem; color: rgba(255,255,255,0.6);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .tier-card.featured .tier-perks li { color: rgba(13,13,13,0.7); }
+  .tier-perks li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.5rem;
+  }
+  .tier-card.featured .tier-perks li::before { color: var(--ink); }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials {
+    background: var(--ink);
+    padding: 8rem 4rem;
+    overflow: hidden;
+  }
+  .testimonials-header { text-align: center; margin-bottom: 4rem; }
+  .testimonials-track {
+    display: flex; gap: 2rem;
+    animation: slideLeft 35s linear infinite;
+    width: max-content;
+  }
+  #testimonials:hover .testimonials-track { animation-play-state: paused; }
+  @keyframes slideLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .testimonial-card {
+    background: var(--ink-soft);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    padding: 2.5rem;
+    width: 360px; flex-shrink: 0;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .testimonial-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateY(-4px);
+  }
+  .test-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+  .test-quote {
+    font-family: var(--font-display);
+    font-size: 1.05rem; font-style: italic;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .test-author {
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .test-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--gold); display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 600; color: var(--ink);
+    flex-shrink: 0;
+  }
+  .test-name { font-size: 0.8rem; font-weight: 500; color: var(--white); }
+  .test-role { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  /* ── PROMOTIONS ── */
+  #promotions {
+    background: var(--ink-soft);
+    padding: 8rem 4rem;
+  }
+  .promo-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3rem; flex-wrap: wrap; gap: 2rem;
+  }
+  .promo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1.5px;
+    background: rgba(255,255,255,0.04);
+  }
+  .promo-card {
+    background: var(--ink);
+    padding: 3rem 2.5rem;
+    display: flex; flex-direction: column;
+    min-height: 300px;
+    cursor: none;
+    position: relative; overflow: hidden;
+    transition: background 0.4s;
+  }
+  .promo-card:hover { background: rgba(201,168,76,0.06); }
+  .promo-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px; background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease);
+  }
+  .promo-card:hover::after { transform: scaleX(1); }
+  .promo-badge {
+    display: inline-flex; align-items: center;
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 0.3rem 0.8rem; border-radius: 2px;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+  .promo-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem; font-weight: 600;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+  .promo-card:first-child .promo-title { font-size: 2.2rem; }
+  .promo-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; flex: 1; }
+  .promo-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 2rem;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    transition: gap 0.3s;
+  }
+  .promo-link:hover { gap: 0.9rem; }
+  .promo-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  /* ── OTHER SERVICES ── */
+  #services {
+    background: var(--cream);
+    padding: 8rem 4rem;
+  }
+  #services .section-title { color: var(--ink); }
+  #services .section-label { color: var(--gold-dark); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s;
+    cursor: none;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+  .service-img {
+    width: 100%; height: 200px;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease);
+    filter: grayscale(0.2);
+  }
+  .service-card:hover .service-img { transform: scale(1.05); filter: grayscale(0); }
+  .service-body { padding: 1.5rem; }
+  .service-num {
+    font-family: var(--font-hero);
+    font-size: 0.8rem; letter-spacing: 0.2em;
+    color: var(--gold-dark); opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem; font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── LOCATION ── */
+  #location {
+    background: var(--ink);
+    padding: 8rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .location-info { padding-top: 1rem; }
+  .location-branch {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .branch-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%; background: var(--gold);
+    flex-shrink: 0;
+  }
+  .branch-name {
+    font-family: var(--font-hero);
+    font-size: 1.8rem; letter-spacing: 0.05em;
+    color: var(--white);
+  }
+  .location-detail {
+    display: flex; gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    align-items: flex-start;
+  }
+  .location-detail svg {
+    width: 18px; height: 18px;
+    stroke: var(--gold); fill: none; stroke-width: 1.5;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .loc-text {
+    font-family: var(--font-display);
+    font-size: 0.95rem; color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+  }
+  .loc-text a { color: var(--gold); text-decoration: none; }
+  .loc-text a:hover { color: var(--gold-light); }
+  .location-map {
+    border-radius: 4px;
+    overflow: hidden;
+    height: 400px;
+    background: var(--stone);
+    position: relative;
+  }
+  .location-map iframe {
+    width: 100%; height: 100%;
+    border: none;
+    filter: grayscale(0.8) contrast(1.1);
+    transition: filter 0.4s;
+  }
+  .location-map:hover iframe { filter: grayscale(0.3) contrast(1.05); }
+  .map-badge {
+    position: absolute; top: 1rem; left: 1rem;
+    background: var(--ink);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--white);
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.4rem 0.8rem; border-radius: 2px;
+    pointer-events: none;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: rgba(0,0,0,0.6);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 4rem 4rem 2rem;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-brand img {
+    height: 40px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 1.25rem;
+    opacity: 0.7;
+  }
+  .footer-brand p {
+    font-family: var(--font-display);
+    font-size: 0.9rem; font-style: italic;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    max-width: 260px;
+  }
+  .footer-col h4 {
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.25rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-col ul a {
+    font-size: 0.82rem; color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--white); }
+  .footer-social {
+    display: flex; gap: 0.75rem; margin-top: 1.5rem;
+  }
+  .social-icon {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    color: rgba(255,255,255,0.45);
+    transition: border-color 0.3s, color 0.3s, transform 0.2s;
+  }
+  .social-icon:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .social-icon svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 1.5rem;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy {
+    font-size: 0.72rem; color: rgba(255,255,255,0.25);
+  }
+  .footer-est {
+    font-family: var(--font-hero);
+    font-size: 0.8rem; letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.15);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  /* ── BACK TO TOP ── */
+  .back-top {
+    position: fixed; bottom: 2rem; right: 2rem;
+    width: 46px; height: 46px;
+    background: var(--gold);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: none;
+    opacity: 0; pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 100;
+    text-decoration: none;
+  }
+  .back-top.show { opacity: 1; pointer-events: all; transform: translateY(0); }
+  .back-top:hover { background: var(--gold-light); }
+  .back-top svg { width: 18px; height: 18px; stroke: var(--ink); fill: none; stroke-width: 2; }
+
+  /* ── MOBILE NAV ── */
+  .mobile-nav {
+    display: none;
+    position: fixed; inset: 0; z-index: 999;
+    background: var(--ink);
+    flex-direction: column;
+    align-items: center; justify-content: center; gap: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+  .mobile-nav.open { opacity: 1; pointer-events: all; display: flex; }
+  .mobile-nav a {
+    font-family: var(--font-hero);
+    font-size: 2.5rem; letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .mobile-nav a:hover { color: var(--gold); }
+  .mobile-nav-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: none; border: none;
+    color: var(--white); cursor: none;
+    font-size: 1.5rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    #about, #location { grid-template-columns: 1fr; gap: 3rem; }
+    .about-images { height: 380px; }
+    #schedule-teaser { grid-template-columns: 1fr; }
+    .schedule-visual { display: none; }
+    .promo-grid { grid-template-columns: 1fr 1fr; }
+    .promo-grid .promo-card:first-child { grid-column: 1 / -1; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .loyalty-tiers { grid-template-columns: 1fr; max-width: 400px; }
+    .tier-card.featured { transform: none; }
+    .hero-stats { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav.scrolled { padding: 0.75rem 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    #hero { }
+    #about, #styles, #schedule-teaser, #loyalty, #testimonials, #promotions, #services, #location { padding: 5rem 1.5rem; }
+    .hero-title { font-size: clamp(4rem, 18vw, 7rem); }
+    .promo-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    footer { padding: 3rem 1.5rem 1.5rem; }
+    .styles-header { flex-direction: column; align-items: flex-start; }
+    .styles-count { font-size: 3rem; }
+    .styles-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .schedule-card-overlay { display: none; }
+    .location-map { height: 280px; }
+    #location { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
 </style>
 </head>
 <body>
 
-<nav class="bar">
-  <div class="container row">
-    <a href="#" class="brand">Singhawon</a>
-    <div class="links">
-      <a href="#styles">Styles</a>
-      <a href="#royalty">Royalty</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#events">Events</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="#contact" class="book"><span class="dot"></span> Book Session</a>
-  </div>
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+  <a href="https://singhawon.com/schedule/4">Schedule</a>
+  <a href="https://singhawon.com/fee">Fee</a>
+  <a href="https://singhawon.com/promotion">Promotion</a>
+  <a href="https://singhawon.com/?anchor=classupdate">Classes</a>
+  <a href="https://singhawon.com/?anchor=otherservice">Services</a>
+  <a href="https://singhawon.com/?anchor=aboutus">About Us</a>
+  <a href="https://booking.rumpuree.com" style="color: var(--gold);">Book Now</a>
+</div>
+
+<!-- Back to Top -->
+<a href="#" class="back-top" id="backTop">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</a>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <a href="https://singhawon.com" class="nav-logo">
+    <img src="https://singhawon.com/images/logo.png" alt="Rumpuree Dance Studio">
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://singhawon.com/schedule/4">Schedule</a></li>
+    <li><a href="https://singhawon.com/fee">Fee</a></li>
+    <li><a href="https://singhawon.com/promotion">Promotion</a></li>
+    <li><a href="https://singhawon.com/?anchor=classupdate">New Classes</a></li>
+    <li><a href="https://singhawon.com/?anchor=otherservice">Events</a></li>
+    <li><a href="https://singhawon.com/?anchor=aboutus">About Us</a></li>
+    <li><a href="https://booking.rumpuree.com" class="nav-cta">Login / Book</a></li>
+  </ul>
+  <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<header class="hero">
-  <div class="container">
-    <span class="eyebrow" style="font-family:var(--serif);font-style:italic;color:var(--accent);font-size:18px;letter-spacing:0;text-transform:none;margin-bottom:24px;font-weight:500">World Dance Studio · Since 2006</span>
-    <div class="grid">
-      <div>
-        <h1>Momentum <span class="it">&amp; Poise</span></h1>
-        <p class="lede">A world-class sanctuary for movement since 2006. We translate the kinetic energy of global dance into professional instruction for the modern artist — Salsa, Bachata, Argentine Tango, Ballet and Pole Dance.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#schedule">View Schedule</a>
-          <a class="btn btn-ghost" href="#styles">Explore Disciplines</a>
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Since 2006 · Bangkok's World Dance Studio</p>
+    <h1 class="hero-title">RUM<span class="gold">PUREE</span></h1>
+    <p class="hero-subtitle">Where every body finds its rhythm</p>
+    <div class="hero-actions">
+      <a href="https://singhawon.com/schedule/4" class="btn-primary">View Schedule</a>
+      <a href="https://singhawon.com/fee" class="btn-outline">Explore Classes</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">45+</div>
+      <div class="stat-label">Dance Styles</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">18+</div>
+      <div class="stat-label">Years of Excellence</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Studio Branches</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">Salsa<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Argentine Tango<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Ballet<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pole Dance<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Bachata<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Belly Dance<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Contemporary<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Flamenco<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Hip Hop<span class="marquee-dot"></span></span>
+    <span class="marquee-item">K-Pop<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Zouk<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Street Jazz<span class="marquee-dot"></span></span>
+    <!-- Duplicated for seamless loop -->
+    <span class="marquee-item">Salsa<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Argentine Tango<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Ballet<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pole Dance<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Bachata<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Belly Dance<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Contemporary<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Flamenco<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Hip Hop<span class="marquee-dot"></span></span>
+    <span class="marquee-item">K-Pop<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Zouk<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Street Jazz<span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="reveal-left">
+    <p class="section-label">Our Story</p>
+    <h2 class="section-title">More than<br>a dance studio.<br><em>A community.</em></h2>
+    <div class="divider" style="background: var(--gold-dark);"></div>
+    <p class="about-body">
+      Since <strong>2006</strong>, Rumpuree has been Bangkok's home for world dance — a place where beginners discover their confidence and seasoned dancers refine their artistry. We believe dance transcends age, background, and experience level.
+    </p>
+    <p class="about-body" style="margin-top: 0.75rem;">
+      With over <strong>45 dance styles</strong>, internationally certified instructors, and a warm, inclusive atmosphere, we have earned our place as one of Thailand's premier dance institutions.
+    </p>
+    <div class="about-actions">
+      <a href="https://singhawon.com/aboutus" class="btn-dark">Who Is Rumpuree?</a>
+      <a href="https://singhawon.com/whyus" class="btn-gold-outline">Why Choose Us</a>
+    </div>
+  </div>
+  <div class="about-images reveal-right">
+    <img class="about-img-main" src="https://singhawon.com/images/human1.png" alt="Rumpuree dancers" loading="lazy">
+    <img class="about-img-accent" src="https://singhawon.com/images/human2.png" alt="Rumpuree studio" loading="lazy">
+    <div class="about-year-badge">
+      <span class="year">18+</span>
+      <span class="since">Years</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── DANCE STYLES ── -->
+<section id="styles">
+  <div class="styles-header reveal">
+    <div>
+      <p class="section-label">What We Teach</p>
+      <h2 class="section-title">Dance <em>Styles</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="styles-count">45</div>
+  </div>
+
+  <div class="styles-grid" id="stylesGrid">
+    <!-- Cards injected by JS -->
+  </div>
+
+  <div class="styles-show-more reveal" style="margin-top: 3rem;">
+    <a href="https://singhawon.com/schedule/4" class="btn-primary">See Full Schedule</a>
+  </div>
+</section>
+
+<!-- ── SCHEDULE TEASER ── -->
+<section id="schedule-teaser">
+  <div class="reveal-left">
+    <p class="section-label">Weekly Schedule</p>
+    <h2 class="section-title">Classes<br>Every <em>Day</em></h2>
+    <div class="divider"></div>
+    <p style="font-family: var(--font-display); font-size: 1rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin-top: 0.5rem;">
+      From morning flows to late-evening social dances — there's always a class that fits your schedule.
+    </p>
+
+    <div class="schedule-days">
+      <div class="schedule-day">
+        <span class="day-name">Monday</span>
+        <div class="day-classes">
+          <span class="day-tag">Ballet</span>
+          <span class="day-tag">Salsa</span>
+          <span class="day-tag">Hip Hop</span>
         </div>
+        <span class="day-arrow">→</span>
       </div>
-      <div class="visual">
-        <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=1080&auto=format&fit=crop&q=80" alt="Dancer mid-turn in flowing fabric" width="1080" height="1440" />
-        <div class="badge"><div class="n">19 yrs</div><div class="l">Of teaching craft</div></div>
+      <div class="schedule-day">
+        <span class="day-name">Tuesday</span>
+        <div class="day-classes">
+          <span class="day-tag">Tango</span>
+          <span class="day-tag">Belly Dance</span>
+        </div>
+        <span class="day-arrow">→</span>
+      </div>
+      <div class="schedule-day">
+        <span class="day-name">Wednesday</span>
+        <div class="day-classes">
+          <span class="day-tag">Pole Dance</span>
+          <span class="day-tag">Jazz</span>
+          <span class="day-tag">K-Pop</span>
+        </div>
+        <span class="day-arrow">→</span>
+      </div>
+      <div class="schedule-day">
+        <span class="day-name">Thursday</span>
+        <div class="day-classes">
+          <span class="day-tag">Bachata</span>
+          <span class="day-tag">Contemporary</span>
+        </div>
+        <span class="day-arrow">→</span>
+      </div>
+      <div class="schedule-day">
+        <span class="day-name">Friday</span>
+        <div class="day-classes">
+          <span class="day-tag">Flamenco</span>
+          <span class="day-tag">Zumba</span>
+          <span class="day-tag">Salsa</span>
+        </div>
+        <span class="day-arrow">→</span>
+      </div>
+      <div class="schedule-day">
+        <span class="day-name">Weekend</span>
+        <div class="day-classes">
+          <span class="day-tag">Workshops</span>
+          <span class="day-tag">Social Dance</span>
+        </div>
+        <span class="day-arrow">→</span>
       </div>
     </div>
+    <div style="margin-top: 2rem;">
+      <a href="https://singhawon.com/schedule/4" class="btn-primary">View Full Schedule</a>
+    </div>
   </div>
-</header>
 
-<section id="styles" class="styles">
-  <div class="container">
-    <div class="head">
-      <div>
-        <span class="eyebrow" style="color:#c2825a">Curated Disciplines</span>
-        <h2>Five worlds, one studio</h2>
+  <div class="schedule-visual reveal-right">
+    <img class="schedule-img" src="https://singhawon.com/images/dancestyle/06_argentine_tango.jpeg" alt="Argentine Tango class" loading="lazy">
+    <div class="schedule-card-overlay">
+      <div class="sc-num">45+</div>
+      <div class="sc-text">Classes per week</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOYALTY ── -->
+<section id="loyalty">
+  <p class="section-label reveal">Dance Royalty Program</p>
+  <h2 class="section-title reveal">Earn as you <em>Dance</em></h2>
+  <div class="divider reveal"></div>
+  <p class="loyalty-intro reveal">
+    Our exclusive loyalty program rewards your dedication. The more you dance, the more you earn — enjoy special perks, discounts, and priority access with every class.
+  </p>
+
+  <div class="loyalty-tiers reveal">
+    <div class="tier-card">
+      <div class="tier-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
       </div>
-      <p>From Latin floor heat to classical lines — taught by working professionals with international stages on their résumés.</p>
+      <div class="tier-name">SILVER</div>
+      <p style="font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:0.25rem;">Getting started</p>
+      <ul class="tier-perks">
+        <li>5% discount on classes</li>
+        <li>Monthly newsletter access</li>
+        <li>Birthday class gift</li>
+        <li>Priority booking for workshops</li>
+      </ul>
     </div>
-    <div class="rule"></div>
-  </div>
-  <div class="scroller">
-    <article class="card">
-      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&auto=format&fit=crop&q=80" alt="Salsa" /></div>
-      <div class="row"><h3>Salsa</h3><span class="tag">On1 · On2</span></div>
-      <p>Sophisticated mambo styling with a focus on connection, timing and musicality.</p>
-    </article>
-    <article class="card">
-      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=800&auto=format&fit=crop&q=80" alt="Bachata" /></div>
-      <div class="row"><h3>Sensual Bachata</h3><span class="tag">Modern</span></div>
-      <p>Fluid body movement, body waves and contemporary technical patterns.</p>
-    </article>
-    <article class="card">
-      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=800&auto=format&fit=crop&q=80" alt="Argentine Tango" /></div>
-      <div class="row"><h3>Argentine Tango</h3><span class="tag">Salon · Milonga</span></div>
-      <p>The authentic art of improvisation, embrace and silent communication.</p>
-    </article>
-    <article class="card">
-      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=800&auto=format&fit=crop&q=80" alt="Ballet" /></div>
-      <div class="row"><h3>Classical Ballet</h3><span class="tag">Open Level</span></div>
-      <p>The foundation of grace, strength and technical discipline at the barre.</p>
-    </article>
-    <article class="card">
-      <div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&auto=format&fit=crop&q=80" alt="Pole Art" /></div>
-      <div class="row"><h3>Pole Art</h3><span class="tag">Aerial</span></div>
-      <p>Contemporary aerial dance combining strength, flexibility and fluidity.</p>
-    </article>
-  </div>
-</section>
-
-<section id="royalty" class="royalty">
-  <div class="panel">
-    <span class="eyebrow">Tiered Membership</span>
-    <h2>Dance Royalty</h2>
-    <p class="lede">Our loyalty program for the dedicated student. Earn status with every class, unlock masterclasses, and receive private invitations to studio galas.</p>
-    <div class="tiers">
-      <div class="tier"><div class="n">Silver</div><div class="l">Level I</div><div class="x">10+ classes</div></div>
-      <div class="tier"><div class="n">Gold</div><div class="l">Level II</div><div class="x">50+ classes</div></div>
-      <div class="tier"><div class="n">Platinum</div><div class="l">Elite</div><div class="x">By invitation</div></div>
-    </div>
-    <a class="btn btn-primary" href="#contact" style="margin-top:48px">Join the Program</a>
-  </div>
-</section>
-
-<section id="schedule" class="sched">
-  <div class="container">
-    <div class="head">
-      <div>
-        <span class="eyebrow">This Week</span>
-        <h2>Weekly Schedule</h2>
+    <div class="tier-card featured">
+      <div class="tier-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       </div>
-      <a class="full" href="#">View Full Calendar</a>
+      <div class="tier-name">GOLD</div>
+      <p style="font-size:0.75rem; color:rgba(13,13,13,0.5); margin-top:0.25rem;">Most popular</p>
+      <ul class="tier-perks">
+        <li>15% discount on all classes</li>
+        <li>Free guest passes monthly</li>
+        <li>Exclusive Gold member events</li>
+        <li>Early access to new classes</li>
+      </ul>
     </div>
-    <div class="rows">
-      <div class="row"><span class="t">18:30</span><span class="ti">Bachata Sensual · Intro</span><span class="meta">Studio A · Elena R.</span></div>
-      <div class="row"><span class="t">19:45</span><span class="ti">Argentine Tango · Milonga</span><span class="meta">Grand Hall · Marco S.</span></div>
-      <div class="row"><span class="t">21:00</span><span class="ti">Salsa Social &amp; Practice</span><span class="meta">Lounge · Open Floor</span></div>
-      <div class="row"><span class="t">10:30</span><span class="ti">Classical Ballet · Open</span><span class="meta">Studio B · Iliana P.</span></div>
-      <div class="row"><span class="t">12:00</span><span class="ti">Pole Art · Intermediate</span><span class="meta">Studio C · Naomi K.</span></div>
+    <div class="tier-card">
+      <div class="tier-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div class="tier-name">PLATINUM</div>
+      <p style="font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:0.25rem;">Elite members</p>
+      <ul class="tier-perks">
+        <li>25% lifetime discount</li>
+        <li>Private lesson credit monthly</li>
+        <li>VIP event invitations</li>
+        <li>Dedicated concierge support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="reveal" style="margin-top: 3.5rem;">
+    <a href="https://singhawon.com/fee" class="btn-dark">Learn About Membership</a>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="testimonials-header reveal">
+    <p class="section-label">What Our Students Say</p>
+    <h2 class="section-title">Stories of <em>Transformation</em></h2>
+    <div class="divider" style="margin: 1.5rem auto;"></div>
+  </div>
+
+  <div style="overflow: hidden;">
+    <div class="testimonials-track" id="testimonialsTrack">
+      <!-- Injected by JS -->
     </div>
   </div>
 </section>
 
-<section id="events" class="events">
-  <div class="container">
-    <span class="eyebrow">Upcoming</span>
-    <h2>Events &amp; Workshops</h2>
-    <div class="ev-grid">
-      <article class="ev"><span class="d">12 May</span><h3>Mid-Spring Masquerade</h3><p>A curated evening of performance and social dance in our Grand Hall.</p></article>
-      <article class="ev"><span class="d">24 Jun</span><h3>International Guest Intensive</h3><p>Three days of mastery with world-renowned soloist Elena Petrov.</p></article>
-      <article class="ev"><span class="d">08 Jul</span><h3>Royalty Member Gala</h3><p>Private gala for Dance Royalty members — by invitation only.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="quote">
-  <div class="inner">
-    <blockquote>“Singhawon isn't a dance school — it's where I discovered the discipline behind grace. Nineteen years on, the studio still feels like the first night.”</blockquote>
-    <cite>Julianne Vance · Member since 2018</cite>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="c-grid">
+<!-- ── PROMOTIONS ── -->
+<section id="promotions">
+  <div class="promo-header reveal">
     <div>
-      <span class="eyebrow">Visit Us</span>
-      <h2>Begin your practice</h2>
-      <p>Walk in for a tour or send a note. We'll match you with a class for your level and pace within 24 hours.</p>
-      <div class="info">
-        <div><div class="k">Studio</div><div class="v">124 Movement Way<br/>Design District, 10110</div></div>
-        <div><div class="k">Email</div><div class="v">hello@singhawon.com</div></div>
-        <div><div class="k">Hours</div><div class="v">Mon–Fri 09:00 – 22:00<br/>Sat–Sun 10:00 – 18:00</div></div>
-      </div>
+      <p class="section-label">Latest Offers</p>
+      <h2 class="section-title">Current <em>Promotions</em></h2>
     </div>
-    <form onsubmit="event.preventDefault();alert('Thank you — we will be in touch shortly.');this.reset();">
-      <div class="field"><label for="n">Name</label><input id="n" required placeholder="Your full name" /></div>
-      <div class="field"><label for="e">Email</label><input id="e" type="email" required placeholder="you@email.com" /></div>
-      <div class="field"><label for="s">Interested style</label>
-        <select id="s"><option>Salsa</option><option>Sensual Bachata</option><option>Argentine Tango</option><option>Classical Ballet</option><option>Pole Art</option><option>Not sure yet</option></select>
-      </div>
-      <div class="field"><label for="m">Message</label><textarea id="m" placeholder="Tell us about your experience level…"></textarea></div>
-      <button class="btn btn-primary" type="submit">Send Inquiry</button>
-    </form>
+    <a href="https://singhawon.com/promotion" class="btn-primary">All Promotions</a>
+  </div>
+
+  <div class="promo-grid reveal">
+    <div class="promo-card">
+      <span class="promo-badge">★ Featured Offer</span>
+      <h3 class="promo-title">New Student Welcome Package</h3>
+      <p class="promo-desc">Begin your dance journey with our curated starter package — 4 trial classes across any styles you choose, at an exclusive introductory rate. Perfect for discovering what moves you.</p>
+      <a href="https://singhawon.com/promotion" class="promo-link">
+        Explore Offer
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="promo-card">
+      <span class="promo-badge">Workshop</span>
+      <h3 class="promo-title">Weekend Intensive</h3>
+      <p class="promo-desc">Deep-dive workshops led by visiting international instructors. Limited seats available — register early.</p>
+      <a href="https://singhawon.com/promotion" class="promo-link">
+        Register
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="promo-card">
+      <span class="promo-badge">Members Only</span>
+      <h3 class="promo-title">Refer a Friend Bonus</h3>
+      <p class="promo-desc">Bring a friend to Rumpuree and both of you receive a complimentary class credit added to your account.</p>
+      <a href="https://singhawon.com/promotion" class="promo-link">
+        Learn More
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
+<!-- ── OTHER SERVICES ── -->
+<section id="services">
+  <div class="reveal">
+    <p class="section-label">Beyond the Studio</p>
+    <h2 class="section-title" style="color: var(--ink);">Other <em style="color: var(--gold-dark);">Services</em></h2>
+    <div class="divider" style="background: var(--gold-dark);"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal" style="transition-delay: 0.05s;">
+      <img class="service-img" src="https://singhawon.com/images/other_services_1.png" alt="Service" loading="lazy">
+      <div class="service-body">
+        <p class="service-num">01</p>
+        <h3 class="service-name">Dance Performances</h3>
+      </div>
+    </div>
+    <div class="service-card reveal" style="transition-delay: 0.1s;">
+      <img class="service-img" src="https://singhawon.com/images/other_services_2.png" alt="Service" loading="lazy">
+      <div class="service-body">
+        <p class="service-num">02</p>
+        <h3 class="service-name">Corporate Events</h3>
+      </div>
+    </div>
+    <div class="service-card reveal" style="transition-delay: 0.15s;">
+      <img class="service-img" src="https://singhawon.com/images/other_services_3.png" alt="Service" loading="lazy">
+      <div class="service-body">
+        <p class="service-num">03</p>
+        <h3 class="service-name">Wedding Choreography</h3>
+      </div>
+    </div>
+    <div class="service-card reveal" style="transition-delay: 0.2s;">
+      <img class="service-img" src="https://singhawon.com/images/other_services_4.png" alt="Service" loading="lazy">
+      <div class="service-body">
+        <p class="service-num">04</p>
+        <h3 class="service-name">Private Lessons</h3>
+      </div>
+    </div>
+    <div class="service-card reveal" style="transition-delay: 0.25s;">
+      <img class="service-img" src="https://singhawon.com/images/other_services_5.png" alt="Service" loading="lazy">
+      <div class="service-body">
+        <p class="service-num">05</p>
+        <h3 class="service-name">International Workshops</h3>
+      </div>
+    </div>
+    <div class="service-card reveal" style="transition-delay: 0.3s;">
+      <img class="service-img" src="https://singhawon.com/images/other_services_6.png" alt="Service" loading="lazy">
+      <div class="service-body">
+        <p class="service-num">06</p>
+        <h3 class="service-name">Dance Competition Prep</h3>
+      </div>
+    </div>
+    <div class="service-card reveal" style="transition-delay: 0.35s;">
+      <img class="service-img" src="https://singhawon.com/images/other_services_7.png" alt="Service" loading="lazy">
+      <div class="service-body">
+        <p class="service-num">07</p>
+        <h3 class="service-name">Kids Dance Programs</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCATION ── -->
+<section id="location">
+  <div class="location-info reveal-left">
+    <p class="section-label">Find Us</p>
+    <h2 class="section-title">Visit Our <em>Studios</em></h2>
+    <div class="divider"></div>
+
+    <div class="location-branch">
+      <div class="branch-dot"></div>
+      <h3 class="branch-name">Asok Branch</h3>
+    </div>
+
+    <div class="location-detail">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <p class="loc-text">
+        2nd Floor, Jasmine City Building<br>
+        Sukhumvit Soi 23, Khlong Toei<br>
+        Watthana, Bangkok 10110
+      </p>
+    </div>
+    <div class="location-detail">
+      <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      <p class="loc-text">092-204-9677</p>
+    </div>
+    <div class="location-detail">
+      <svg viewBox="0 0 24 24"><path d="M9 17l3 3 3-3m-3 3V7m-7 6h18"/><circle cx="5" cy="13" r="2"/><circle cx="19" cy="13" r="2"/></svg>
+      <p class="loc-text">BTS Asok (Exit 6) · MRT Sukhumvit</p>
+    </div>
+    <div class="location-detail">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <p class="loc-text">
+        Mon–Fri: 10:00–21:30<br>
+        Sat–Sun: 09:00–20:00
+      </p>
+    </div>
+
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a href="https://www.google.com/maps/place/rumPUREE+Asok" target="_blank" class="btn-primary">Get Directions</a>
+      <a href="https://singhawon.com/studio" class="btn-outline">All Branches</a>
+    </div>
+  </div>
+
+  <div class="location-map reveal-right">
+    <div class="map-badge">Asok · Bangkok</div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7357!2d100.5604604!3d13.7357703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ee2d4012f5d%3A0xdbf2c83d76e3d4b3!2srumPUREE%20Asok!5e0!3m2!1sen!2sth!4v1700000000"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Rumpuree Asok Location">
+    </iframe>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
 <footer>
-  <div class="grid">
-    <div>
-      <span class="brand">Singhawon</span>
-      <p>Defining the pulse of world dance since 2006. Professional instruction in an editorial environment.</p>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="https://singhawon.com/images/logo.png" alt="Rumpuree">
+      <p>Bangkok's world dance studio — where movement becomes a language everyone can speak.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/rumpuree/" target="_blank" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@rumpuree" target="_blank" class="social-icon" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a href="https://www.google.co.th" target="_blank" class="social-icon" aria-label="Google">
+          <svg viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><path d="M12 12h5.5A5.5 5.5 0 1 1 9.77 7.1"/></svg>
+        </a>
+      </div>
     </div>
-    <div>
+    <div class="footer-col">
+      <h4>Classes</h4>
+      <ul>
+        <li><a href="https://singhawon.com/schedule/4">Class Schedule</a></li>
+        <li><a href="https://singhawon.com/fee">Fees & Packages</a></li>
+        <li><a href="https://singhawon.com/?anchor=classupdate">New Classes</a></li>
+        <li><a href="https://singhawon.com/promotion">Promotions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
       <h4>Studio</h4>
       <ul>
-        <li><a href="#styles">Disciplines</a></li>
-        <li><a href="#royalty">Dance Royalty</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#events">Events</a></li>
+        <li><a href="https://singhawon.com/aboutus">About Rumpuree</a></li>
+        <li><a href="https://singhawon.com/whyus">Why Choose Us</a></li>
+        <li><a href="https://singhawon.com/studio">Our Studios</a></li>
+        <li><a href="https://singhawon.com/?anchor=otherservice">Events</a></li>
       </ul>
     </div>
-    <div>
-      <h4>Contact</h4>
-      <address>124 Movement Way<br/>Design District, 10110<br/>hello@singhawon.com</address>
-    </div>
-    <div>
-      <h4>Social</h4>
+    <div class="footer-col">
+      <h4>Book</h4>
       <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">YouTube</a></li>
-        <li><a href="#">TikTok</a></li>
+        <li><a href="https://booking.rumpuree.com">Login / Book</a></li>
+        <li><a href="https://singhawon.com/?anchor=aboutus">Contact Us</a></li>
       </ul>
     </div>
   </div>
-  <div class="legal">
-    <span>© <script>document.write(new Date().getFullYear())</script> Singhawon Dance Studio</span>
-    <span><a href="#">Privacy</a><a href="#">Terms</a></span>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Rumpuree Dance Studio. All rights reserved.</p>
+    <p class="footer-est">EST. 2006</p>
   </div>
 </footer>
 
+<script>
+  // Dance styles data
+  const danceStyles = [
+    {name: 'Ballet Adult', img: 'https://singhawon.com/images/dancestyle/01_ballet_adult.jpeg'},
+    {name: 'Belly Dance', img: 'https://singhawon.com/images/dancestyle/02_bellydance.jpeg'},
+    {name: 'Street Jazz', img: 'https://singhawon.com/images/dancestyle/03_street_jazz.jpeg'},
+    {name: 'K-Pop', img: 'https://singhawon.com/images/dancestyle/04_k_pop.jpeg'},
+    {name: 'Focus Zone', img: 'https://singhawon.com/images/dancestyle/05_focus_zone.jpeg'},
+    {name: 'Argentine Tango', img: 'https://singhawon.com/images/dancestyle/06_argentine_tango.jpeg'},
+    {name: 'Bollywood', img: 'https://singhawon.com/images/dancestyle/07_bollywood.jpeg'},
+    {name: 'Contemporary', img: 'https://singhawon.com/images/dancestyle/08_contemporary.jpeg'},
+    {name: 'Flamenco', img: 'https://singhawon.com/images/dancestyle/09_flamenco.jpeg'},
+    {name: 'Hip Hop', img: 'https://singhawon.com/images/dancestyle/10_hip_hop.jpeg'},
+    {name: 'Jazz', img: 'https://singhawon.com/images/dancestyle/11_jazz.jpeg'},
+    {name: 'MV Dance', img: 'https://singhawon.com/images/dancestyle/12_mv_dance.jpeg'},
+    {name: 'Salsa Ladies Styling', img: 'https://singhawon.com/images/dancestyle/13_salsa_ladies_styling.jpeg'},
+    {name: 'Pole Dance', img: 'https://singhawon.com/images/dancestyle/14_pole_dance.jpeg'},
+    {name: 'Striptease', img: 'https://singhawon.com/images/dancestyle/15_striptease.jpeg'},
+    {name: 'Thai Dance', img: 'https://singhawon.com/images/dancestyle/16_thai_dance.jpeg'},
+    {name: 'Zumba', img: 'https://singhawon.com/images/dancestyle/17_zumba.jpeg'},
+    {name: 'Piloxing', img: 'https://singhawon.com/images/dancestyle/18_piloxing.jpeg'},
+    {name: 'Salsa On2', img: 'https://singhawon.com/images/dancestyle/19_salsa_on2.jpeg'},
+    {name: 'Strength & Flexibility', img: 'https://singhawon.com/images/dancestyle/20_strength_flexibility.jpeg'},
+    {name: 'Piyo', img: 'https://singhawon.com/images/dancestyle/21_piyo.jpeg'},
+    {name: 'Belly Dance Tribal', img: 'https://singhawon.com/images/dancestyle/22_bellydance_tribal_fusion.jpeg'},
+    {name: 'Bachata', img: 'https://singhawon.com/images/dancestyle/33_bachata.jpeg'},
+    {name: 'Zouk', img: 'https://singhawon.com/images/dancestyle/45_zouk.jpeg'},
+    {name: 'Reggaeton', img: 'https://singhawon.com/images/dancestyle/35_reggaeton.jpeg'},
+    {name: 'African Dance', img: 'https://singhawon.com/images/dancestyle/37_african_dance.jpeg'},
+    {name: 'Carnival Samba', img: 'https://singhawon.com/images/dancestyle/39_carnival_samba.jpeg'},
+    {name: 'Swing', img: 'https://singhawon.com/images/dancestyle/44_swing.jpeg'},
+    {name: 'Dancehall', img: 'https://singhawon.com/images/dancestyle/32_dancehall.jpeg'},
+    {name: 'Floorwork', img: 'https://singhawon.com/images/dancestyle/24_floorwork.jpeg'},
+  ];
+
+  // Render dance style cards
+  const grid = document.getElementById('stylesGrid');
+  danceStyles.forEach(s => {
+    grid.innerHTML += `
+      <div class="style-card">
+        <img src="${s.img}" alt="${s.name}" loading="lazy">
+        <div class="style-card-overlay">
+          <span class="style-card-name">${s.name}</span>
+        </div>
+        <div class="style-card-icon">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>`;
+  });
+
+  // Testimonials data
+  const testimonials = [
+    {quote: "Rumpuree changed my life. I came in with zero confidence and left as someone who dances at every event. The instructors are patient, passionate, and world-class.", name: "Priya M.", role: "Salsa Student, 3 years", initials: "PM"},
+    {quote: "The Argentine Tango classes here are the best in Bangkok. The level of detail and musicality the teachers bring is extraordinary.", name: "Thomas K.", role: "Tango Dancer", initials: "TK"},
+    {quote: "I started ballet at 45 and thought it was too late. The instructors proved me completely wrong. This studio welcomes everyone.", name: "Suda W.", role: "Ballet Adult Student", initials: "SW"},
+    {quote: "The schedule is incredibly flexible and the Dance Royalty program means I'm always rewarded for showing up. Best investment in myself.", name: "Alex T.", role: "Gold Member", initials: "AT"},
+    {quote: "I've taken classes at studios across Asia. Rumpuree stands apart — the energy, the community, and the quality of teaching are unmatched.", name: "Mei L.", role: "Contemporary & Jazz", initials: "ML"},
+    {quote: "Brought my daughter for K-Pop classes and she absolutely loves it. The teachers are incredible with young students.", name: "Nara P.", role: "Parent", initials: "NP"},
+    {quote: "The Pole Dance classes transformed how I feel about my body. So empowering, so much fun. Cannot recommend enough.", name: "Jessica R.", role: "Pole Dance Student", initials: "JR"},
+    {quote: "Rumpuree organized the flash mob for our wedding reception. Everyone was blown away — it was the highlight of the entire event.", name: "Champ & Fon", role: "Wedding Clients", initials: "CF"},
+  ];
+
+  const track = document.getElementById('testimonialsTrack');
+  const doubled = [...testimonials, ...testimonials];
+  doubled.forEach(t => {
+    track.innerHTML += `
+      <div class="testimonial-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"${t.quote}"</p>
+        <div class="test-author">
+          <div class="test-avatar">${t.initials}</div>
+          <div>
+            <p class="test-name">${t.name}</p>
+            <p class="test-role">${t.role}</p>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
+  }, {passive: true});
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, {threshold: 0.12, rootMargin: '0px 0px -50px 0px'});
+  reveals.forEach(r => observer.observe(r));
+
+  // Mobile nav
+  function openMobileNav() {
+    const mn = document.getElementById('mobileNav');
+    mn.style.display = 'flex';
+    requestAnimationFrame(() => mn.classList.add('open'));
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    const mn = document.getElementById('mobileNav');
+    mn.classList.remove('open');
+    setTimeout(() => { mn.style.display = 'none'; document.body.style.overflow = ''; }, 400);
+  }
+
+  // Back to top
+  document.getElementById('backTop').addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  // Counter animation on stats
+  function animateCounter(el, target, duration = 1800) {
+    let start = 0;
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      el.textContent = Math.floor(progress * target) + (el.dataset.suffix || '');
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+</script>
 </body>
 </html>
